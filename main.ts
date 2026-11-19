@@ -16,7 +16,7 @@
 // must stay unchanged — the scorer rebuilds the dossier with its own copy
 // and requires a byte-for-byte match.
 
-import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-frontend.ts';
@@ -28,8 +28,9 @@ const repoRoot = fileURLToPath(new URL('.', import.meta.url));
 // variable names the directory instead.
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
-// Start from a clean output directory so a stale file can never leak in.
-rmSync(outputDir, { recursive: true, force: true });
+// The output directory is left exactly as the grader hands it over (the
+// kit starter never deletes it — /output is a mount point in the grader,
+// and recursively removing it fails there).
 mkdirSync(outputDir, { recursive: true });
 
 // The guide itself.
