@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA 6 Trophy Guide &amp; Tracker — 55 PS5 Trophies</title>
+<meta name="description" content="Offline guide and checklist for all 55 Grand Theft Auto VI PlayStation 5 trophies: roadmap to the platinum, missable flags, cited guides, progress tracker with export and import.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>GTA 6 Trophy Guide</h1>
+    <p class="sub">All 55 PlayStation 5 trophies — tracker, roadmap &amp; guides. Works fully offline.</p>
+    <div class="progress" id="progressBox" aria-live="polite">
+      <div class="bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+      <div class="ptext"><span id="progressText">0 / 55 earned</span><span id="progressPct">0%</span></div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button class="tab active" data-view="checklist" role="tab" aria-selected="true">Checklist</button>
+      <button class="tab" data-view="roadmap" role="tab" aria-selected="false">Platinum Roadmap</button>
+      <button class="tab" data-view="settings" role="tab" aria-selected="false">Settings &amp; Export</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="view-checklist" class="view">
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search trophies by name or description…" aria-label="Search trophies">
+      <div class="chips" id="kindChips" role="group" aria-label="Filter by kind">
+        <button class="chip active" data-kind="all">All</button>
+        <button class="chip" data-kind="story">Story</button>
+        <button class="chip" data-kind="missable">Missable</button>
+        <button class="chip" data-kind="collectibles">Collectibles</button>
+        <button class="chip" data-kind="activities">Activities</button>
+        <button class="chip" data-kind="online">Online</button>
+        <button class="chip" data-kind="platinum">Platinum</button>
+      </div>
+      <div class="chips" id="gradeChips" role="group" aria-label="Filter by grade">
+        <button class="chip active" data-grade="all">Any grade</button>
+        <button class="chip" data-grade="platinum">Platinum</button>
+        <button class="chip" data-grade="gold">Gold</button>
+        <button class="chip" data-grade="silver">Silver</button>
+        <button class="chip" data-grade="bronze">Bronze</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="hideEarned"> Hide earned</label>
+      <label class="toggle"><input type="checkbox" id="spoilerToggle"> Spoiler protection (hide un-earned story trophies)</label>
+    </div>
+    <p class="count" id="resultCount"></p>
+    <ul class="list" id="trophyList"></ul>
+    <p class="empty" id="emptyMsg" hidden>No trophies match these filters. Try clearing the search or a filter.</p>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Roadmap to the Platinum</h2>
+    <p class="note">Built from the official trophy descriptions. GTA 6 released 2026-11-19, so step details are not yet verified in-game — the order below is a reading of the official list, not a tested route. The only trophy the descriptions mark as plausibly missable is <strong>Actions Speak Louder</strong> (a story choice); no other trophy is confirmed missable from the official descriptions.</p>
+    <div id="roadmapStages"></div>
+  </section>
+
+  <section id="view-settings" class="view" hidden>
+    <h2>Settings, Export &amp; Import</h2>
+    <div class="card">
+      <h3>Progress</h3>
+      <p>Your checklist is saved in this browser (localStorage) automatically as you tick trophies off.</p>
+      <div class="row">
+        <button id="exportBtn" class="btn">Export progress (.json)</button>
+        <label class="btn filebtn">Import progress<input type="file" id="importFile" accept=".json,application/json" hidden></label>
+        <button id="resetBtn" class="btn danger">Reset all progress</button>
+      </div>
+      <p class="status" id="ioStatus" aria-live="polite"></p>
+    </div>
+    <div class="card">
+      <h3>Spoiler protection</h3>
+      <p>When on, story trophies you have not earned yet show as hidden — name and description replaced — until you earn them. Collectibles and activity trophies are never hidden.</p>
+      <label class="toggle"><input type="checkbox" id="spoilerToggle2"> Spoiler protection on</label>
+    </div>
+    <div class="card">
+      <h3>Sources</h3>
+      <p>Official trophy names, descriptions and grades are as PlayStation publishes them, via the official trophy list on <a href="https://www.exophase.com/game/grand-theft-auto-vi/trophies/">Exophase</a> and the <a href="https://psnprofiles.com/trophies/grand-theft-auto-vi">PSNProfiles trophy list</a>. Every guide in this app is written in my own words from the official description and is <strong>not yet verified in-game</strong>. No Rockstar Games logo or official artwork is used anywhere in this guide.</p>
+    </div>
+    <div class="card">
+      <h3>About this guide</h3>
+      <p>Grand Theft Auto VI released 2026-11-19. This guide covers the game's 55 PS5 trophies: 1 platinum, 2 gold, 6 silver, 46 bronze. Guides are my own reading of the official trophy descriptions; where a step or location is not confirmed, the guide says so plainly rather than inventing one.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Unofficial fan guide. Not affiliated with Rockstar Games or PlayStation. Trophy names and descriptions are PlayStation's official list; guides are original writing. Works offline — no network requests.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
